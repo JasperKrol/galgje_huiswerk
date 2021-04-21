@@ -45,8 +45,25 @@
 }
 
 function isGameWon(word, guesses) {
-// input is javascript, guesses [] lege array
-  // ja, dan gewonnen
+    // DOEL: isGameWon
+    // word = "javascript" guesses = ["j", "a", "v", "s", "c", "r", "i", "p", "t"] -> true
+    // word = "javascript" guesses = [], ["j", "a"] -> false
+    // Strategie:
+    // Kunnen we 1 letter vinden die je niet hebt geraden? return false
+    // Kunnen niet 1 letter vinden die je niet hebt geraden return true
+    // - [ ] loggen: wat is word & guesses
+    // - [ ] word -> word.split(""): ["j", "a", "v","a", "s", "c", "r", "i", "p", "t"]
+    // - [ ] loopen over dat array met de letters van het woord
+    // - [ ] Voor elke letter in het woord
+    // - [ ] Zit deze letter in guesses -> guesses.includes(letter)
+    // - [ ] if in de loop
+    // - [ ] in guesses true -> we gaan door
+    // - [ ] in guesses false -> we stoppen: return false
+    // - [ ] Zijn we aan het einde van de loop? aan het einde van de functie return true
+
+    console.log("INPUT", "WORD:", word, "GUESSES:", guesses);
+    const stringToArray = word.split("");
+    console.log(stringToArray);
 }
 
 function isGameLost(word, guesses) {
@@ -57,4 +74,4 @@ module.exports = {
   displayWordSoFar: displayWordSoFar,
   isGameWon: isGameWon,
   isGameLost: isGameLost,
-};
+}
